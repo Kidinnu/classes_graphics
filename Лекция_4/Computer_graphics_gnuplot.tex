@@ -1,64 +1,26 @@
 % -*- program: xelatex -*-
-%\documentclass[12pt, compress]{beamer} 
 \documentclass[12pt, compress]{beamer}       
-%\documentclass[notes=only]{beamer}
 
+% Fonts
 \usepackage{fontspec}
-	
 \setsansfont{PT Sans}
 \setmonofont{Liberation Mono}
 
-\usepackage{beamerthemesplit}
-\usefonttheme[onlymath]{serif}
-%\DeclareFontEncoding{T1}
 \fontencoding{T1}
-
-%\usepackage[T2A]{fontenc} 
-%\usepackage[utf8x]{inputenc}
 \usepackage[russian]{babel}
-\usepackage{listings}
+\hypersetup{unicode=true}
+
 
 \usepackage{amsmath,amssymb,amsthm} 
-\hypersetup{unicode=true}
 \usepackage{graphics,graphicx}
 \usepackage{verbatim} 
 \usepackage{fancyvrb}
 \usepackage{booktabs}
 \usepackage{media9}
 \usepackage[super]{natbib}
-\usepackage{color}
-\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
-\definecolor{mylilas}{RGB}{170,55,241}
-\definecolor{codecolor}{RGB}{0,120,0}
-\definecolor{light-gray}{gray}{0.95}
-\definecolor{light-green}{rgb}{0.93, 1, 0.8}
-\definecolor{light-yellow}{rgb}{1,1,0.85}
-\definecolor{dark-blue}{rgb}{0,0,0.6}
-\definecolor{dark-red}{rgb}{0.7,0,0.0}
-\definecolor{dark-green}{RGB}{10,150,0}
-\definecolor{ssau-color}{RGB}{0,163,224}
-
-\usepackage{pifont}% http://ctan.org/pkg/pifont
-\newcommand{\cmark}{\textcolor{green}{\ding{51}}}
-\newcommand{\xmark}{\textcolor{red}{\ding{55}}}
-
-\setbeamercolor{frametitle}{fg=ssau-color,bg=gray!10}
-\setbeamerfont{title}{series=\bfseries,parent=structure}
-\setbeamerfont{frametitle}{series=\bfseries,parent=structure}
-
-\setbeamertemplate{blocks}[rounded][shadow=false]
-\setbeamertemplate{navigation symbols}{}
-
-\newcommand{\code}[1]{\textcolor{dark-green}{\texttt{#1}}}
-\newcommand{\cleartitlepage}[1]{\begin{frame}[plain]\begin{center}\textsc{#1}\end{center}\end{frame}}
-\renewcommand{\emph}[1]{\textcolor{dark-blue}{#1}}
-\newcommand{\emphb}[1]{\textcolor{dark-blue}{\textbf{#1}}}
-\newcommand{\lstcomment}[1]{\textcolor{dark-green}{\# \texttt{#1}}}
-
+\usepackage{listings}
 \usepackage{dirtree}
-
-\usetheme{CambridgeUS}
-\usecolortheme{lily}
+\usepackage{menukeys}
 
 \lstset{basicstyle=\ttfamily,
     language=gnuplot,    
@@ -87,21 +49,47 @@
     %emph=[2]{word1,word2}, emphstyle=[2]{style},    
 }
 
-\usepackage{tikz}
-\usetikzlibrary{positioning} 
-\tikzset{cbutton/.style={rectangle,minimum width=10mm,thick,draw=red!50!black!50,
-top color=white,bottom color=red!50!black!30}}
-\tikzset{mbutton/.style={rectangle,minimum width=10mm,thick,draw=black!20,
-top color=white,bottom color=black!30}}
 
-\usetikzlibrary{arrows,shapes}
-\tikzstyle{every picture}+=[remember picture]
 
-\setbeamercolor*{palette primary}{use=structure,fg=white,bg=ssau-color}
-\setbeamercolor*{palette secondary}{fg=ssau-color,bg=gray!15!white}
-\setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=ssau-color}
-\setbeamercolor*{palette quaternary}{fg=ssau-color,bg=gray!5!white}
-\setbeamercolor{frametitle}{fg=white,bg=ssau-color}
+\usepackage{color}
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+\definecolor{codecolor}{RGB}{0,120,0}
+\definecolor{light-gray}{gray}{0.95}
+\definecolor{light-green}{rgb}{0.93, 1, 0.8}
+\definecolor{light-yellow}{rgb}{1,1,0.85}
+\definecolor{dark-blue}{rgb}{0,0,0.6}
+\definecolor{dark-red}{rgb}{0.7,0,0.0}
+\definecolor{dark-green}{RGB}{10,150,0}
+\definecolor{ssau-color}{RGB}{0,163,224}
+
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\textcolor{green}{\ding{51}}}
+\newcommand{\xmark}{\textcolor{red}{\ding{55}}}
+
+\usepackage{beamerthemesplit}
+\usefonttheme[onlymath]{serif}
+\usetheme{CambridgeUS}
+\usecolortheme{lily}
+
+
+\setbeamercolor{frametitle}{fg=dark-red,bg=gray!10}
+\setbeamerfont{title}{series=\bfseries,parent=structure}
+\setbeamerfont{frametitle}{series=\bfseries,parent=structure}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{navigation symbols}{}
+
+\newcommand{\code}[1]{\textcolor{dark-green}{\texttt{#1}}}
+\newcommand{\cleartitlepage}[1]{\begin{frame}[plain]\begin{center}\textsc{#1}\end{center}\end{frame}}
+\renewcommand{\emph}[1]{\textcolor{dark-blue}{#1}}
+\newcommand{\emphb}[1]{\textcolor{dark-blue}{\textbf{#1}}}
+\newcommand{\lstcomment}[1]{\textcolor{dark-green}{\# \texttt{#1}}}
+
+%\setbeamercolor*{palette primary}{use=structure,fg=white,bg=ssau-color}
+%\setbeamercolor*{palette secondary}{fg=ssau-color,bg=gray!15!white}
+%\setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=ssau-color}
+%\setbeamercolor*{palette quaternary}{fg=ssau-color,bg=gray!5!white}
+%\setbeamercolor{frametitle}{fg=white,bg=ssau-color}
 
 \makeatother
 \setbeamertemplate{footline}
@@ -129,7 +117,7 @@ top color=white,bottom color=black!30}}
   %\vfill  
   \begin{tikzpicture}
   \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);  
-  \fill[color=ssau-color]   (-1cm, 3.9cm) rectangle(\the\paperwidth, 5.9cm);
+  \fill[color=dark-red]   (-1cm, 3.9cm) rectangle(\the\paperwidth, 5.9cm);
   %\usebeamerfont{title}\insertsectionhead\par%
   %\node[text width=\the\paperwidth,align=center] at (current page.center) {\color{ExecusharesWhite}\Large\textbf{\insertsectionhead}};  
   \node[text width=\the\paperwidth,align=center] at (6cm,4.9cm) {\color{white}\Large\textbf{\insertsectionhead}};  
@@ -137,30 +125,16 @@ top color=white,bottom color=black!30}}
   \end{frame}
 }
 
+\settitlefont{Liberation Serif}
 
 
 % ============================================================================
 
 \title[Основы GNUPLOT]{Основы GNUPLOT}
 \subtitle{Компьютерная графика}
-\author[Самарский университет]{Юдинцев В. В.}
+\author[Кафедра теоретической механики]{Юдинцев В. В.}
 \institute{Кафедра теоретической механики}
 \date{\today}
-
-\usepackage{tikz}
-\usetikzlibrary{positioning} 
-\tikzset{cbutton/.style={rectangle,minimum width=10mm,thick,draw=red!50!black!50,
-top color=white,bottom color=red!50!black!30}}
-\tikzset{mbutton/.style={rectangle,minimum width=10mm,thick,draw=black!20,
-top color=white,bottom color=black!30}}
-
-
-\tikzstyle{block} = [rectangle, draw, fill=yellow!20, text width=5em, text centered, rounded corners, minimum height=5em]
-\tikzstyle{subblock} = [rectangle, draw, fill=white, text width=2em, text centered, minimum height=1em]
-\tikzstyle{module} = [rectangle, draw, fill=none, text width=5em, text centered, rounded corners, minimum height=5em]
-\tikzstyle{line} = [draw, ->]
-
-\usepackage{menukeys}
 
 \begin{document}
 
